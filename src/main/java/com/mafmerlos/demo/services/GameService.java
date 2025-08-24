@@ -3,7 +3,7 @@ package com.mafmerlos.demo.services;
 import com.mafmerlos.demo.dto.GameDTO;
 import com.mafmerlos.demo.dto.GameMinDTO;
 import com.mafmerlos.demo.entities.Game;
-import com.mafmerlos.demo.repositories.GameRpository;
+import com.mafmerlos.demo.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +14,7 @@ import java.util.List;
 public class GameService {
 
     @Autowired
-    private GameRpository gameRepository;
+    private GameRepository gameRepository;
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll(){
        List <Game> result  = gameRepository.findAll();
